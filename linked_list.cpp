@@ -78,7 +78,8 @@ public:
   }
 
   void delete_at_pos(ll pos){
-    if (pos < 0 or pos > length) {
+    if (is_empty()) cout << "List is empty";
+    else if (pos < 0 or pos > length) {
         cout << "Index out of bound" << "\n";
         return;
     }
@@ -118,22 +119,6 @@ public:
       }
    }
    
-   void delete_at_pos(ll pos){
-        if (pos < 0 or pos > length) {
-            cout << "Index out of bound" << "\n";
-            return;
-        }
-        if (pos == 0) delete_first();
-        else if (pos == length) delete_end();
-        else{
-            node *temp = first;
-            for (int i = 0; i < pos - 1; i++)
-                temp = temp -> next;
-            node *temp2 = temp -> next;
-            temp -> next = temp2 -> next;
-            delete temp2;
-        }
-   }
 
     void print(){
         node *temp = first;
@@ -191,23 +176,30 @@ int main()
 {
 
 
-  linked_list lest;
-  lest.insert_first(10);
-  lest.insert_first(20);
-  lest.insert_first(30);
-  lest.insert_first(40);
-  
-  lest.insert_first(40);
-  lest.insert_first(30);
-  lest.insert_first(20);
-  lest.insert_first(10);
-  lest.insert_end(100);
-  
+    linked_list lest;
+    lest.insert_first(10);
+    lest.insert_first(20);
+    lest.insert_first(30);
+    lest.insert_first(40);
 
-  ll Idx = lest.find_pos(100);
-  cout << Idx << "\n";
-  
-  lest.print();  
+    lest.insert_first(40);
+    lest.insert_first(30);
+    lest.insert_first(20);
+    lest.insert_first(10);
+    lest.insert_end(100);
+
+
+    ll Idx = lest.find_pos(100); // return position of 100 in list based on 1
+    cout << Idx << "\n";
+    cout << (lest.search(100) ? "Found" : "Not Found") << "\n";
+    cout << (lest.search(1000) ? "Found" : "Not Found") << "\n";
+
+    lest.update(Idx - 1, 1000); // update value at position Idx - 1 
+    cout << (lest.search(1000) ? "Found" : "Not Found") << "\n";
+
+    cout << (lest.search(lest.find_pos(1000) - 1) ? "Found" : "Not Found") << "\n";
+
+    lest.print();
 
 
   return 0;
