@@ -143,13 +143,13 @@ public:
     } 
     
     // search for a specific value in the list
-    ll search(ll val){
+    bool search(ll val){
         node *temp = first;
         for (int i = 0; i < length; i++){
-            if (temp -> item == val) return i;
+            if (temp -> item == val) return true;
             temp = temp -> next;
         }
-        return -1;
+        return false;
     }
  
     // update a specific value in the list
@@ -192,7 +192,7 @@ public:
 
   // add new node before the node that has the value
   void addbefore(int val, int data){
-    int pos = search(val);
+    int pos = find_pos(val);
     if (pos == -1) cout << "Value not found" << "\n";
     else if (pos == 0) cout << "Value is the first element" << "\n";
     else insert_at_pos(pos, data);
@@ -200,7 +200,7 @@ public:
 
    // delete the node that after a node that has the specified value
    void delete_after(int val){
-      int pos = search(val);
+      int pos = find_pos(val);
       if (pos == -1) cout << "Value not found" << "\n";
       else if (pos == length - 1) cout << "Value is the last element" << "\n";
       else delete_at_pos(pos + 1);
@@ -244,7 +244,7 @@ void Accepted(){
   cout << (lest.search(1000) ? "Found" : "Not Found") << "\n";
   
   lest.update(Idx, 1000); // update value at position Idx
-  cout << (lest.search(1000) != -1 ? "Found" : "Not Found") << "\n";
+  cout << (lest.search(1000) ? "Found" : "Not Found") << "\n";
 
   lest.print();
   
