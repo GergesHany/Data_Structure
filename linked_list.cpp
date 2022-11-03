@@ -3,6 +3,14 @@ using namespace std;
 typedef long long ll;
 
 
+void Gerges_Hany(){
+  ios_base::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+  #ifndef ONLINE_JUDGE  
+    freopen("input.txt", "r", stdin), freopen("output.txt", "w", stdout);
+  #endif
+}
+
+
 class linked_list{
   
 private:  
@@ -15,20 +23,22 @@ private:
     }
  };    
 
-  node *first;
-  node *last;
+  node *first, *last;
   int length;
 
 public:
+  // Constructor to initialize the linked list 
   linked_list(){
     length = 0;
     first = last = nullptr;
   }  
 
+  // determine whether or not the list is empty
   bool is_empty(){ 
     return first == nullptr;
   }
   
+  // insert a new node at the front of the list
   void insert_first(ll val){
     node *temp = new node(val);
     if(is_empty()){
@@ -44,6 +54,7 @@ public:
   }
 
 
+  // insert a new node at the end of the list
   void insert_end(ll val){
     node *temp = new node(val);
     if (is_empty()){
@@ -58,7 +69,7 @@ public:
     length++;
   }
 
-
+  // insert a new node at a specific position in the list
   void insert_at_pos(ll pos, ll val){
     if (pos < 0 or pos > length) {
         cout << "Index out of bound" << "\n";
@@ -77,24 +88,7 @@ public:
     length++;
   }
 
-  void delete_at_pos(ll pos){
-    if (is_empty()) cout << "List is empty";
-    else if (pos < 0 or pos > length) {
-        cout << "Index out of bound" << "\n";
-        return;
-    }
-    if (pos == 0) delete_first();
-    else if (pos == length) delete_end();
-    else{
-        node *temp = first;
-        for (int i = 0; i < pos - 1; i++)
-            temp = temp -> next;
-        node *temp2 = temp -> next;
-        temp -> next = temp2 -> next;
-        delete temp2;
-    }
-  }
-
+   // delete the first node in the list
    void delete_first(){
         if (is_empty()) {
             cout << "List is empty" << "\n";
@@ -106,6 +100,7 @@ public:
         length--;
    } 
 
+   // delete the last node in the list
    void delete_end(){
       if (is_empty()) cout << "List is empty";
       else{
@@ -119,7 +114,25 @@ public:
       }
    }
    
+   // delete a node at a specific position in the list
+   void delete_at_pos(ll pos){
+        if (pos < 0 or pos > length) {
+            cout << "Index out of bound" << "\n";
+            return;
+        }
+        if (pos == 0) delete_first();
+        else if (pos == length) delete_end();
+        else{
+            node *temp = first;
+            for (int i = 0; i < pos - 1; i++)
+                temp = temp -> next;
+            node *temp2 = temp -> next;
+            temp -> next = temp2 -> next;
+            delete temp2;
+        }
+   }
 
+    // search for a specific value in the list
     void print(){
         node *temp = first;
         while(temp != nullptr){
@@ -129,6 +142,7 @@ public:
         cout << "\n";
     } 
     
+    // search for a specific value in the list
     bool search(ll val){
         node *temp = first;
         while(temp != nullptr){
@@ -138,6 +152,7 @@ public:
         return false;
     }
 
+    // update a specific value in the list
     void update(ll pos, ll val){
         if (pos < 0 or pos > length) {
             cout << "Index out of bound" << "\n";
@@ -149,15 +164,49 @@ public:
         temp -> item = val;
     }
 
+   // find the pos of a specific value in the list
     ll find_pos(ll val){
         node *temp = first;
         for (int i = 0; i < length; i++){
-            if (temp -> item == val) return i + 1; // return position
+            if (temp -> item == val) return i; // return position
             temp = temp -> next;
         }
         return -1; // not found
-    }
+   }
+  
+  // return the length of the list
+  ll get_length(){
+    return length;
+  }
 
+  // return the minimum value in the list
+  ll get_min_element(){
+    node *temp = first;
+    ll min = temp -> item;
+    for (int i = 0; i < length; i++){
+      if (temp -> item < min) min = temp -> item;
+      temp = temp -> next;
+    }
+    return min;
+  }
+
+   // add new node before the node that has the value
+   void addbefore(int val, int data){
+      int pos = search(val);
+      if (pos == -1) cout << "Value not found" << "\n";
+      else if (pos == 0) cout << "Value is the first element" << "\n";
+      else insert_at_pos(pos - 1, data);
+   }
+
+   // delete the node that after a node that has the specified value
+   void delete_after(int val){
+      int pos = search(val);
+      if (pos == -1) cout << "Value not found" << "\n";
+      else if (pos == length - 1) cout << "Value is the last element" << "\n";
+      else delete_at_pos(pos + 1);
+   }
+
+  // delete the list
   ~linked_list(){
     node *temp = first;
     while(temp != nullptr){
@@ -172,35 +221,45 @@ public:
 };
 
 
+
+void Accepted(){
+  
+  linked_list lest;
+  lest.insert_first(10);
+  lest.insert_first(20);
+  lest.insert_first(30);
+  lest.insert_first(40);
+  
+  lest.insert_first(40);
+  lest.insert_first(30);
+  lest.insert_first(20);
+  lest.insert_first(10);
+  lest.insert_end(100);
+  
+
+  ll Idx = lest.find_pos(100); // return position of 100 in list based on 1
+  cout << Idx << "\n";
+  cout << (lest.search(100) ? "Found" : "Not Found") << "\n";
+  cout << (lest.search(1000) ? "Found" : "Not Found") << "\n";
+  
+  lest.update(Idx, 1000); // update value at position Idx - 1 
+  cout << (lest.search(1000) ? "Found" : "Not Found") << "\n";
+
+  cout << (lest.search(1000) ? "Found" : "Not Found") << "\n";
+
+  lest.print();
+  
+
+}
+
 int main()
 {
 
-
-    linked_list lest;
-    lest.insert_first(10);
-    lest.insert_first(20);
-    lest.insert_first(30);
-    lest.insert_first(40);
-
-    lest.insert_first(40);
-    lest.insert_first(30);
-    lest.insert_first(20);
-    lest.insert_first(10);
-    lest.insert_end(100);
-
-
-    ll Idx = lest.find_pos(100); // return position of 100 in list based on 1
-    cout << Idx << "\n";
-    cout << (lest.search(100) ? "Found" : "Not Found") << "\n";
-    cout << (lest.search(1000) ? "Found" : "Not Found") << "\n";
-
-    lest.update(Idx - 1, 1000); // update value at position Idx - 1 
-    cout << (lest.search(1000) ? "Found" : "Not Found") << "\n";
-
-    cout << (lest.search(lest.find_pos(1000) - 1) ? "Found" : "Not Found") << "\n";
-
-    lest.print();
-
-
+  Gerges_Hany();
+  int testcaces = 1;
+  // cin >> testcaces;
+  while (testcaces--){  
+    Accepted();
+  }   
   return 0;
 }
