@@ -20,7 +20,8 @@ private:
   node *head, *tail;
 
 public:
-
+  
+   // Constructor to initialize the linked list 
   doubly_linked_list(){
     length = 0;
     head = tail = nullptr;
