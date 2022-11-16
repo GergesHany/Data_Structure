@@ -84,6 +84,7 @@ public:
             temp = temp -> next;
         newNode -> next = temp -> next;
         temp -> next = newNode;    
+        length--;
     }
     length++;
   }
