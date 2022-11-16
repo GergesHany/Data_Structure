@@ -236,6 +236,18 @@ public:
         else if (pos == length - 1) delete_end();
         else delete_at_pos(pos + 1);
     }
+  
+     // delete the list
+    ~circular_linked_list(){
+        if (is_empty()) return;
+        node *temp = head;
+        while(temp != tail){
+            node *new_node = temp;
+            temp = temp -> next;
+            delete new_node;
+        }
+        delete tail;
+    }
 
 };
 
