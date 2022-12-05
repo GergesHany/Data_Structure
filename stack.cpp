@@ -91,6 +91,7 @@ class Stack{
     for (int i = 0; i < s.size(); i++){
       if (char(st.top()) != s[i]){ // char() is used to convert int to char 
         cout << "Not plandrom " << s << "\n";
+        return false;
       }
       st.pop();
     }
@@ -122,7 +123,7 @@ int main(){
 
   Stack st;
 
-  st.is_plandrom("abba");
+  st.is_plandrom("aabba");
   cout <<  st.binary(7) << "\n";
 
   return 0;
