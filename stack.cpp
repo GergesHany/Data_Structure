@@ -123,8 +123,18 @@ int main(){
 
   Stack st;
 
-  st.is_plandrom("aabba");
+  st.push(1);
+  st.push(2);
+  st.push(3);
+  st.print();
+  cout << st.find_pos(2) << "\n";
+  st.pop();
+  st.print();
+
+  st.is_plandrom("abba");
   cout <<  st.binary(7) << "\n";
+
+
 
   return 0;
 }
