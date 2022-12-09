@@ -10,7 +10,7 @@ struct Queue{
     // constructor
     Queue(){
         Front = rear = -1;
-        size = 10;
+        size = 1e7;
         Q = new int[size];
     }
 
