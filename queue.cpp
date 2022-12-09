@@ -10,7 +10,7 @@ struct Queue{
     // constructor
     Queue(){
         Front = rear = -1;
-        size = 1e7; // the maximum size of the stack
+        size = 1e7; // the maximum size of the queue
         Q = new int[size]; 
     }
 
