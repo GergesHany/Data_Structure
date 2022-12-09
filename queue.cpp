@@ -10,8 +10,8 @@ struct Queue{
     // constructor
     Queue(){
         Front = rear = -1;
-        size = 1e7;
-        Q = new int[size];
+        size = 1e7; // the maximum size of the stack
+        Q = new int[size]; 
     }
 
     // push element at the end of the queue
