@@ -105,7 +105,7 @@ struct Queue{
     // return the index of an element in the queue
     int find_index(int x){
         for(int i = Front + 1; i <= rear; i++){
-            if(Q[i] == x) return i;
+            if(Q[i] == x) return i - 1;
         }
         return -1;
     }
