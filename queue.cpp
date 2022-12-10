@@ -2,6 +2,7 @@
 #define ll long long
 using namespace std;
 
+
 struct Queue{
     
     int *Q; // pointer to array of elements in the queue
@@ -196,22 +197,29 @@ struct Queue{
 
 };
 
+void Gerges_Hany(){
+  ios_base::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+  #ifndef ONLINE_JUDGE  
+    freopen("input.txt", "r", stdin), freopen("output.txt", "w", stdout);
+  #endif
+}
+
 
 int main(){
 
+    Gerges_Hany();
     Queue q;
-    for (int i = 1; i < 10; i++) q.push(i);
-    //q.enqueue_N(5); 
+    for (int i = 1; i < 10; i++) q.push(i * 10);
     q.display();
     int N = 5;
     int *arr = q.dequeue_N(N);
-        if (arr != NULL) 
-            for (int i = 0; i < N; i++) 
-            cout << arr[i] << " \n"[i == N - 1];
-        else {
-            cout << "NULL" << "\n";
-            cout << (N < 0 ? "N is negative" : "N is greater than the queue size") << "\n";
-        }
+    if (arr != NULL) 
+        for (int i = 0; i < N; i++) 
+          cout << arr[i] << " \n"[i == N - 1];
+    else {
+        cout << "NULL" << "\n";
+        cout << (N < 0 ? "N is negative" : "N is greater than the queue size") << "\n";
+    }
 
 
     cout << q.find_index(5) << "\n";
@@ -231,6 +239,16 @@ int main(){
     cout << "The minimum element in the queue equal " << q.find_min() << "\n";
     cout << "The maximum element in the queue equal " << q.find_max() << "\n";
     cout << "The sum of all elements in the queue equal " << q.get_sum() << "\n";
+    
+    q.pop_front();
+    q.pop_front();
+    q.display();
+    cout << "\n\n";
+    
+    cout << q.find_index(30) << "\n";
+    cout << q.find_index(100) << "\n";
+    cout << q.find_index(10) << "\n";
+    
 
     return 0;
 }
