@@ -9,9 +9,9 @@ struct Queue{
 
     // constructor
     Queue(){
-        Front = rear = -1;
+        Front = rear = -1; // initially the queue is empty
         size = 1e7; // the maximum size of the queue
-        Q = new int[size]; 
+        Q = new int[size]; // allocating the memory
     }
 
     // push element at the end of the queue
@@ -164,28 +164,69 @@ struct Queue{
         }
     }
 
+
+    // enqueue N that will enqueue an array of N elements on the queue
+    void enqueue_N(int N){
+        for(int i = 0; i < N; i++){
+            int x; cin >> x;
+            push(x);
+        }
+    }
+
+    // dequeue N that will dequeue and return an array of N elements from the queue
+    int* dequeue_N(int N){
+        // if N is negative return NULL
+        if (N < 0) return NULL;
+        // if the queue size is less than N return NULL
+        if (N > sz()) return NULL;
+        int F = Front;
+        int *arr = new int[N];
+        for(int i = 0; i < N; i++){
+            arr[i] = Q[Front + 1];
+            Front++;
+        }
+        Front = F;
+        return arr;
+    }
+
+
 };
 
 
-
 int main(){
-    
 
     Queue q;
-    q.push(1 + 3);
-    q.push(2 + 3);
-    q.push(3 + 3);
+    for (int i = 1; i < 10; i++) q.push(i);
+    q.enqueue_N(5); 
+    q.display();
+    int N = 5;
+    int *arr = q.dequeue_N(N);
+        if (arr != NULL) 
+            for (int i = 0; i < N; i++) 
+            cout << arr[i] << " \n"[i == N - 1];
+        else {
+            cout << "NULL" << "\n";
+            cout << (N < 0 ? "N is negative" : "N is greater than the queue size") << "\n";
+        }
 
-    q.push(1);
-    q.push(2);
-    q.push(3);
 
+    cout << q.find_index(5) << "\n";
+    cout << "The size equal " <<  q.sz() << "\n";
+    
+    q.display();
+    q.reverse();
     q.display();
 
     cout << (q.is_sorted() ? "sorted" : "not sorted") << "\n";
     q.sort();
+    q.display();
     cout << (q.is_sorted() ? "sorted" : "not sorted") << "\n";
+    
+    q.insert(3, 100);
 
+    cout << "The minimum element in the queue equal " << q.find_min() << "\n";
+    cout << "The maximum element in the queue equal " << q.find_max() << "\n";
+    cout << "The sum of all elements in the queue equal " << q.get_sum() << "\n";
 
     return 0;
 }
