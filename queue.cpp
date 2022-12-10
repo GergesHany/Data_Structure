@@ -112,9 +112,11 @@ struct Queue{
 
     // insert an element at a specific index
     void insert(int index, int x){
-        if(rear == size - 1){
+        if(rear == size - 1)
             cout << "Queue is full" << "\n";
-        }else{
+        else if (index < Front + 1 || index > rear + 1) // if the index is invalid
+            cout << "Invalid index" << "\n";
+        else{
             for (int i = rear; i >= index; i--) 
                 Q[i + 1] = Q[i];
             Q[index] = x; rear++;
@@ -123,9 +125,11 @@ struct Queue{
 
     // remove an element at a specific index
     void remove(int index){
-        if(Front == rear){
+        if(Front == rear)
             cout << "Queue is empty" << "\n";
-        }else{
+        else if (index < Front + 1 || index > rear) // if the index is invalid
+            cout << "Invalid index" << "\n";
+        else{
             for (int i = index; i < rear; i++) 
                 Q[i] = Q[i + 1];
             rear--;
@@ -197,7 +201,7 @@ int main(){
 
     Queue q;
     for (int i = 1; i < 10; i++) q.push(i);
-    q.enqueue_N(5); 
+    //q.enqueue_N(5); 
     q.display();
     int N = 5;
     int *arr = q.dequeue_N(N);
