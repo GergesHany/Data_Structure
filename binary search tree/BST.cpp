@@ -210,7 +210,6 @@ int main()
   cout << tree.minimam() << " " << tree.maximam() << "\n";
   cout << (tree.search(5) ? "found" : "not found") << "\n";
 
-  // 
 
   return 0;
 }
