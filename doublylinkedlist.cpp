@@ -24,7 +24,7 @@ public:
    // Constructor to initialize the linked list 
   doubly_linked_list(){
     length = 0;
-    head = tail = nullptr;
+    head = tail = NULL;
   }
 
     // check if the list is empty
@@ -157,45 +157,41 @@ public:
         temp -> item = val;
     }
 
-    // delete the last node in the list
-    void delete_last(){
-        if (is_empty()) {
-            cout << "The list is empty\n";
-            return;
-        }
-        if (length == 1){
-            delete head;
-            head = tail = nullptr;
-        }
-        else{
-            node* temp = tail;
-            tail = tail -> prev;
-            tail -> next = nullptr;
-            delete temp;
-        }
-        length--;
-    }
-
     // delete the first node in the list
     void delete_first(){
-        if (is_empty()) {
-            cout << "The list is empty\n";
+        if (is_empty()){
+            cout << "List is empty" << "\n";
             return;
         }
         if (length == 1){
-            delete head;
-            head = tail = nullptr;
+            head = tail = NULL;
+            length--;
+            return;
         }
-        else{
-            node* temp = head;
-            head = head -> next;
-            head -> prev = nullptr;
-            delete temp;
-        }
+        node *temp = head;
+        head = head -> next;
+        head -> prev = NULL;
+        delete temp;
         length--;
     }
 
-
+    // delete the last node in the list
+    void delete_last(){
+        if (is_empty()){
+            cout << "List is empty" << "\n";
+            return;
+        }
+        if (length == 1){
+            head = tail = NULL;
+            length--;
+            return;
+        }
+        node *temp = tail;
+        tail = tail -> prev;
+        tail -> next = NULL;
+        delete temp;
+        length--;
+    }
 
 };
 
@@ -209,7 +205,31 @@ void Accepted(){
   list.insert_first(2);
   list.insert_first(3);
 
-  list.print();     
+  list.print(); // 3 2 1
+  list.insert_end(4);
+  list.print(); // 3 2 1 4
+  list.delete_first();
+  list.print(); // 2 1 4
+  list.delete_last();
+  list.print(); // 2 1
+  for (int i = 0; i < 10; i++)
+    list.insert_end((i << 1)); // i * 2
+
+  list.print(); // 2 1 0 2 4 6 8 10 12 14 16 18
+  list.insert_end(1);
+  cout << list.search(1) << "\n"; // 1
+  
+  
+  cout << "first: " << list.find_first(1) << "\n"; // 1
+  cout << "last: " << list.find_last(1) << "\n"; // 12
+
+  cout << "min: " << list.min() << "\n"; // 0
+  cout << "max: " << list.max() << "\n"; // 18
+  cout << "sum: " << list.sum() << "\n"; // 90
+  list.update(0, 100);
+  list.print(); // 100 1 0 2 4 6 8 10 12 14 16 18 1
+
+  cout << (list.search(100) ? "found" : "not found") << "\n"; // found
 
 
 }
