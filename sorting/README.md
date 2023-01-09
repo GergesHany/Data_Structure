@@ -1,4 +1,4 @@
-**${\bf{\color\{Red}\{A-collection-of-sorting-algorithms-implemented-in-C++}}}$**
+**${\bf{\color\{Green}\{A-collection-of-sorting-algorithms-implemented-in-C++}}}$**
 
 
 ## Selection Sort
