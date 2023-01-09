@@ -106,3 +106,36 @@ The Best  case in Bubble sort Early Termination is O(N)
 ![bubble-sort-gif-9](https://user-images.githubusercontent.com/36489953/42171410-83532a64-7e19-11e8-95a1-b2dd3aaedc43.gif)
 
 
+## Insertion Sort
+
+### Code
+
+```cpp
+void insertion_sort(vector < int >& vec){
+   for (int i = 1; i < sz(vec); i++){
+      int j = i - 1; // j is the index of the last element in the sorted part
+      int key = vec[i]; // key is the element to be inserted
+      while (j >= 0 && vec[j] > key){
+         vec[j + 1] = vec[j]; // shift right
+         j--; // move left
+      }
+      vec[j + 1] = key; // insert the key
+   }
+}
+```
+
+Insertion sort is a simple sorting algorithm that works the way we sort playing cards. It is efficient for (quite) small data sets.  
+It is often used when the data set is nearly sorted (it takes minimum time (Order of n)).    
+It takes maximum time to sort if elements are sorted in reverse order.
+ 
+
+| Case  | Performance |
+| :---: | :---: |
+| Worst case performance   | O(n^2)  |
+| Best case performance  | O(n)  |
+| Average case performance  | O(n^2)  |
+| Auxiliary Space           | O(1)  |
+
+![1_kra0ofxedgi8hvhjffci4w](https://user-images.githubusercontent.com/36489953/42171484-b508016a-7e19-11e8-8d47-3b95d788d579.gif)
+
+
