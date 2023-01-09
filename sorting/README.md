@@ -55,7 +55,7 @@ Selection sort is noted for its simplicity, and it has performance advantages ov
 
 ```cpp
 // Bubble sort Early Termination
-void Bubble_Sort(vector < ll >& vec){
+void Bubble_Sort_1(vector < ll >& vec){
    for (int i = 0; i < sz(vec); i++){
       bool swapped = false; // to check if the array is sorted
        // "(j < sz(vec) - i - 1)" because the last i elements are already sorted
@@ -69,7 +69,7 @@ void Bubble_Sort(vector < ll >& vec){
    }
 }
 
-void bubble_sort(vector < int > &v){
+void bubble_sort_2(vector < int > &v){
   for(int i = 0; i < sz(v); i++){
     for(int j = 0; j < sz(v) - i - 1; j++){ 
       if(v[j] > v[j + 1]) 
@@ -78,7 +78,7 @@ void bubble_sort(vector < int > &v){
   }
 }
 
-void Bubble_sort(vector < int > &v){
+void Bubble_sort_3(vector < int > &v){
   for(int i = 0; i < sz(v); i++){
     for (int j = i + 1; j < sz(v); j++){
       if(v[i] > v[j]) 
