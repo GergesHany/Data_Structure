@@ -100,8 +100,8 @@ A slow sorting algorithm for the simplest data sets
 
 **${\bf{\color\{Red}\{important-Note}}}$**
  
-The beast case in Bubble sort is O(N ^ 2) and 
-The beast case in Bubble sort Early Termination is O(N)
+The Best  case in Bubble sort is O(N ^ 2) and 
+The Best  case in Bubble sort Early Termination is O(N)
 
 ![bubble-sort-gif-9](https://user-images.githubusercontent.com/36489953/42171410-83532a64-7e19-11e8-95a1-b2dd3aaedc43.gif)
 
