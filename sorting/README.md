@@ -183,3 +183,36 @@ A single most important advantage of merge sort over quick sort is its stability
 ![merge-sort-example-300px](https://user-images.githubusercontent.com/36489953/42171944-ed5814c8-7e1a-11e8-9d30-10ae8047bb17.gif)
 
 
+## Quick sort
+
+```cpp
+int Partition(vector < int >& vec, int l, int r){
+    int pivot = vec[r], i = l; // pivot is the last element in the subarray
+    for(int j = l; j < r; j++){ // j is the current element
+        if(vec[j] <= pivot) // if the current element is less than the pivot
+            swap(vec[i++], vec[j]); // swap the current element with the first element in the right subarray
+    }
+    swap(vec[i], vec[r]); // swap the pivot with the first element in the right subarray
+    return i; // return the index of the pivot
+}
+
+void Quick_Sort(vector < int >& vec, int l, int r){
+  if(l >= r) return; // base case (the subarray has one or zero elements) the subarray is already sorted
+  int pivot = Partition(vec, l, r); // partition the subarray
+  Quick_Sort(vec, l, pivot - 1); // sort the left subarray
+  Quick_Sort(vec, pivot + 1, r); // sort the right subarray
+}
+
+```
+
+Quick Sort is a recursive sorting algorithm that is more effective than other O(nlogn) algorithms for large datasets that fit in memory, but is unstable. Quick Sort in general does not requiere extra space while Merge Sort requires O(n) extra storage
+
+| Case  | Performance |
+| :---: | :---: |
+| Worst case performance   | O(n^2)  |
+| Best case performance  | O(n log n)  |
+| Average case performance  | O(n log n)  |
+| Auxiliary Space           | O(log(n)) |
+
+![quicksort-example](https://user-images.githubusercontent.com/36489953/42190383-0923306a-7e5d-11e8-86b3-1e9f7a79b782.gif)
+
