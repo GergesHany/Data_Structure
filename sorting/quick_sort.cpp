@@ -26,6 +26,7 @@ void Quick_Sort(vector < int >& vec, int l, int r){
   Quick_Sort(vec, pivot + 1, r); // sort the right subarray
 }
 
+// implement using other idea
 
 void quick_sort(vector < int >& vec){
 
