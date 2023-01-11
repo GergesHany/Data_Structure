@@ -235,3 +235,41 @@ Quick Sort is a recursive sorting algorithm that is more effective than other O(
 
 ![quicksort-example](https://user-images.githubusercontent.com/36489953/42190383-0923306a-7e5d-11e8-86b3-1e9f7a79b782.gif)
 
+
+## Radix sort
+
+```cpp
+void radix_sort(vector < int >& vec){
+  int mx = *max_element(vec.begin(), vec.end()); // to get the maximum element in the array
+  for (int exp = 1; mx / exp > 0; exp *= 10){ // to get the number of digits in the maximum element
+    vector < int > output(sz(vec)); // to store the sorted array
+    vector < int > count(10); // to store the count of each digit 
+    for (int i = 0; i < sz(vec); i++) count[(vec[i] / exp) % 10]++; // to count the number of each digit
+    for (int i = 1; i < 10; i++) count[i] += count[i - 1]; // to get the index of each digit
+    for (int i = sz(vec) - 1; i >= 0; i--){ // to sort the array
+      output[count[(vec[i] / exp) % 10] - 1] = vec[i]; // to get the index of each digit
+      count[(vec[i] / exp) % 10]--; // to decrease the count of each digit
+    }
+    for (int i = 0; i < sz(vec); i++) vec[i] = output[i]; // to store the sorted array in the original array
+  }
+}
+```
+> **Note**  
+
+where n is the number of elements and k is the number of digits in the maximum element  
+
+| Case  | Performance |
+| :---: | :---: |
+| Worst case performance   | O(nk)  |
+| Best case performance  | O(nk)  |
+| Average case performance  | O(nk)  |
+| Auxiliary Space           | O(n + k) |
+
+
+Radix Sort is a non-comparative integer sorting algorithm that sorts data with integer keys by grouping keys by the individual digits which share the same significant 
+position and value. Radix sort uses counting sort as a subroutine to sort an array of numbers
+
+
+![counting-sort](https://user-images.githubusercontent.com/105644935/211844529-4dadab19-4631-4056-88b5-121be8f0f22b.gif)
+
+
