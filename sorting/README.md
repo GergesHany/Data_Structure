@@ -97,14 +97,6 @@ void bubble_sort_2(vector < int > &v){
   }
 }
 
-void Bubble_sort_3(vector < int > &v){
-  for(int i = 0; i < sz(v); i++){
-    for (int j = i + 1; j < sz(v); j++){
-      if(v[i] > v[j]) 
-        swap(v[i], v[j]);
-    }
-  }
-}
 ```
 
 
