@@ -39,6 +39,5 @@ The following are some of the differences between Arrays and Linked Lists:
 
 <br>
 
-![1_RDUZJbkbiibhVmnl5OOOMw](https://user-images.githubusercontent.com/105644935/212210969-8934375f-b5b8-4b5e-a197-4ba53c995d62.gif)
-
+![tenor-2-min1](https://user-images.githubusercontent.com/105644935/212214370-b117abbc-e93f-407f-bfe2-efae9d39c9d6.gif)
 
