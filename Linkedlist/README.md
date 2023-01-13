@@ -37,3 +37,8 @@ The following are some of the differences between Arrays and Linked Lists:
 2. Linked Lists can be also used to implement Graphs. (Adjacency list representation of Graph).
 3. Linked Lists can be used to Implement Hash Tables - Each Bucket of the hash table can be a linked list (Open chain hashing).
 
+<br>
+
+![1_RDUZJbkbiibhVmnl5OOOMw](https://user-images.githubusercontent.com/105644935/212210969-8934375f-b5b8-4b5e-a197-4ba53c995d62.gif)
+
+
