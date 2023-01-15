@@ -77,7 +77,7 @@ void pop(){
 
 ## Applications of Stack
 Following is the various Applications of Stack in Data Structure:
-1. Evaluation of Arithmetic Expressions
+1. (Evaluation of Arithmetic Expressions)[https://github.com/GergesHany/Data_Structure/blob/master/Stack/Arithmetic_Expressions.cpp]
 2. Backtracking
 3. Reverse a Data
 4. Processing Function Calls
