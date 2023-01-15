@@ -58,12 +58,16 @@ void Selection_Sort_3(vector < ll >& vec){
 
 Selection sort is noted for its simplicity, and it has performance advantages over more complicated algorithms in certain situations, particularly where auxiliary memory is limited
 
+### Number of time executed: n - 1 times.
+
 | Case  | Performance |
 | :---: | :---: |
 | Worst case performance   | O(n^2)  |
 | Best case performance  | O(n^2)  |
 | Average case performance  | O(n^2)  |
 | Auxiliary Space           | O(1)  |
+
+
 
 ![selectionsort](https://user-images.githubusercontent.com/36489953/42171344-5554d9d2-7e19-11e8-8537-7811ebbbd1b6.gif)
 
@@ -102,6 +106,9 @@ void bubble_sort_2(vector < int > &v){
 
 A slow sorting algorithm for the simplest data sets
 
+### Number of time executed: n times.
+
+
 | Case  | Performance |
 | :---: | :---: |
 | Worst case performance   | O(n^2)  |
@@ -139,6 +146,7 @@ Insertion sort is a simple sorting algorithm that works the way we sort playing 
 It is often used when the data set is nearly sorted (it takes minimum time (Order of n)).    
 It takes maximum time to sort if elements are sorted in reverse order.
  
+### Number of time executed: n - 1 times.
 
 | Case  | Performance |
 | :---: | :---: |
