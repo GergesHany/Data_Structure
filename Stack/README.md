@@ -84,7 +84,7 @@ Following is the various Applications of Stack in Data Structure:
 
 An example of an arithmetic expression
 
-`Infix to Infix`
+`Infix to postfix`
 
 ![applications-of-stack-in-data-structure2](https://user-images.githubusercontent.com/105644935/212526463-ac2f15d3-bb39-4848-8a12-2b74f95c5c4e.png)
 
