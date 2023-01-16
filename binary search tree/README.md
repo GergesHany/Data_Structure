@@ -10,6 +10,25 @@ Binary Search Tree is a node-based binary tree data structure which has the foll
 There must be no duplicate nodes(BST may have duplicate values with different handling approaches)
 
 
+## Delete node is binary search tree
+- the node not have any child (delete it)
+- the node have one child (delete it and replace it with its child)
+- the node have two child (replace it with the (minimum value in the right subtree or maximam value in the left subtree)) 
+
+## find the successor of the node
+- the node have right child (the minimum value in the right subtree)
+- the node not have right child (the parent of the node)
+- the node not have right child and it is the left child of its parent (the parent of the node)
+
+## find the predecessor of the node
+- the node have left child (the maximum value in the left subtree)
+- the node not have left child (the parent of the node) 
+- the node not have left child and it is the right child of its parent (the parent of the node)
+
+<br>
+
+## binary search tree:
+
 ![optimal-binary-search-tree-from-sorted-array](https://user-images.githubusercontent.com/105644935/212498710-9be49e0e-ea92-4176-ac9b-7c866b85a8cb.gif)
 
 
