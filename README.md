@@ -4,11 +4,11 @@
 **linear data structure are:** Data structure where data elements are arranged sequentially or linearly where each and every element is attached to its previous and next adjacent is called a linear data structure. In linear data structure, single level is involved. Therefore, we can traverse all the elements in single run only. Linear data structures are easy to implement because computer memory is arranged in a linear way. Its examples are  array, stack, queue, etc. 
 
 
-1. array
-2. [Stack](#https://github.com/GergesHany/Data_Structure/tree/master/Stack)
-3. [Queue](#https://github.com/GergesHany/Data_Structure/tree/master/Queue)
-4. [Linked List](#https://github.com/GergesHany/Data_Structure/tree/master/Linkedlist)
-5. Hash Tables
+- array
+- [Stack](#https://github.com/GergesHany/Data_Structure/tree/master/Stack)
+- [Queue](#https://github.com/GergesHany/Data_Structure/tree/master/Queue)
+- [Linked List](#https://github.com/GergesHany/Data_Structure/tree/master/Linkedlist)
+- Hash Tables
 
 <br>
 
