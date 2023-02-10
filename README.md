@@ -5,9 +5,9 @@
 
 
 - array
-- [Stack](#https://github.com/GergesHany/Data_Structure/tree/master/Stack)
-- [Queue](#https://github.com/GergesHany/Data_Structure/tree/master/Queue)
-- [Linked List](#https://github.com/GergesHany/Data_Structure/tree/master/Linkedlist)
+- [Stack](https://github.com/GergesHany/Data_Structure/tree/master/Stack)
+- [Queue](https://github.com/GergesHany/Data_Structure/tree/master/Queue)
+- [Linked List](https://github.com/GergesHany/Data_Structure/tree/master/Linkedlist)
 - Hash Tables
 
 <br>
@@ -50,7 +50,7 @@ These types can be implemented as linear or non-linear data structures. The data
 **Non-linear Data Structure:** 
 Data structures where data elements are not arranged sequentially or linearly are called non-linear data structures. In a non-linear data structure, single level is not involved. Therefore, we can’t traverse all the elements in single run only. Non-linear data structures are not easy to implement in comparison to linear data structure. It utilizes computer memory efficiently in comparison to a linear data structure. Its examples are trees and graphs.  
 
-1. [trees](#https://github.com/GergesHany/Data_Structure/tree/master/binary%20search%20tree)
+1. [trees](https://github.com/GergesHany/Data_Structure/tree/master/binary%20search%20tree)
 2. graphs
 
 
